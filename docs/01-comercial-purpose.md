@@ -23,10 +23,12 @@ El detalle de titulares, párrafos y CTAs por bloque está documentado en **[`02
 
 La landing debe **emocionar y legitimar** en pocos segundos (hero + scroll inicial) y **convertir curiosidad en contacto o donación** sin saturar.
 
+Un enfoque visual *editorial* (tipografía fuerte, ritmo de scroll, composición cuidada) puede reforzar emoción y confianza **si** los caminos a **contacto, donación y voluntariado** siguen claros; criterios técnicos de motion en [`07-motion-y-gsap.md`](./07-motion-y-gsap.md) y visión global en [`../claude.md`](../claude.md).
+
 ## Objetivo de negocio del sitio
 
 - **Descubrimiento:** que un visitante entienda *qué es* Sembrando Valores y *por qué importa*.
 - **Confianza:** coherencia visual, textos cuidados, datos de contacto y donación visibles.
 - **Acción:** clic a WhatsApp, mail, mapa o decisión de colaborar (ver secciones de contacto y colaboración en el copy de `02`).
 
-Para criterios visuales y de implementación técnica al pulir la experiencia, ver **[`05-objetivos-tecnicos-esperados.md`](./05-objetivos-tecnicos-esperados.md)** y el tema en **[`04-uso-del-tema.md`](./04-uso-del-tema.md)**.
+Para criterios visuales y de implementación técnica al pulir la experiencia, ver **[`05-objetivos-tecnicos-esperados.md`](./05-objetivos-tecnicos-esperados.md)**, el tema en **[`04-uso-del-tema.md`](./04-uso-del-tema.md)**, motion en **[`07-motion-y-gsap.md`](./07-motion-y-gsap.md)** y **orden de trabajo por sección** en **[`08-metodologia-de-trabajo.md`](./08-metodologia-de-trabajo.md)**.

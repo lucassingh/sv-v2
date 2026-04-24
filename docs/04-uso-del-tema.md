@@ -97,6 +97,13 @@ Lista útil de prefijos:
 - Z-index: `--z-base`, … `--z-overlay`
 - Layout: `--layout-content-max`, `--layout-prose-max`
 
+## Ritmo editorial y espaciado vertical
+
+La dirección visual del sitio es *editorial* (mucho aire, scroll narrado, grids con ruptura controlada; ver [`../claude.md`](../claude.md)). Eso **no** contradice el sistema de tokens:
+
+- **Márgenes laterales y ancho de contenido:** respetar `theme.layout` / `--layout-content-max` (y `--layout-prose-max` donde aplique lectura larga) para que el sitio siga reconocible como **Sembrando Valores**.
+- **Espacio entre secciones:** puede variar fuerte (secciones “respiradas” vs bloques más densos) si la **jerarquía tipográfica** y los colores siguen `04`. No hace falta un mismo `padding-block` entre todas las secciones; sí evitar saltos arbitrarios de **color** o **familia tipográfica** sin intención de marca.
+
 ## Uso con Tailwind (arbitrary values)
 
 Sin tocar `tailwind.config.ts` todavía, podés referenciar variables:

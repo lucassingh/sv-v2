@@ -8,7 +8,7 @@ Este documento describe **qué hay hoy** en `sv-landing`, **hacia dónde** se qu
 
 La landing ya cuenta con:
 
-- **Stack estable:** Next.js (App Router), TypeScript estricto, Tailwind, Framer Motion, patrones de UI tipo Aceternity.
+- **Stack estable:** Next.js (App Router), TypeScript estricto, Tailwind, Framer Motion, **GSAP** (p. ej. **ScrollTrigger** para motion ligado al scroll), patrones de UI tipo Aceternity. Criterio de uso entre librerías: [`../claude.md`](../claude.md) y detalle en [`07-motion-y-gsap.md`](./07-motion-y-gsap.md) (Framer para microinteracciones locales; GSAP para storytelling y secuencias al scroll).
 - **Estructura global implementada:** layout, navegación, secciones principales, i18n ES/EN, pie y flujos de contacto/donación según el copy documentado en [`02-contenido-web.md`](./02-contenido-web.md).
 - **Contenido y mensaje** alineados al propósito de la asociación (ver [`01-comercial-purpose.md`](./01-comercial-purpose.md)).
 - **Tema formalizado** en código y CSS (`theme/theme.ts`, `:root` en `app/globals.css`), aunque la UI **aún no** consume esos tokens de forma uniforme en todos los bloques (ver [`04-uso-del-tema.md`](./04-uso-del-tema.md)).
@@ -24,14 +24,16 @@ La meta explícita es una **landing muy atractiva, moderna y de alto impacto vis
 2. **Transmita confianza** (consistencia cromática y tipográfica, espaciado, imágenes reales de calidad).
 3. **Invite a la acción** alineada con la causa: contacto, difusión, colaboración (CTAs claros sin ruido).
 
-Eso implica, entre otras cosas, lo que ya anticipa `claude.md`:
+Eso implica, entre otras cosas, lo que resumen [`../claude.md`](../claude.md) y [`08-metodologia-de-trabajo.md`](./08-metodologia-de-trabajo.md):
 
-- Alto impacto visual: gradientes y tratamientos de superficie con criterio, animaciones con scroll, microinteracciones.
+- **Dirección visual:** enfoque *editorial* (jerarquía tipográfica, grid con ruptura controlada, aire y scroll narrado), con motion al scroll vía **GSAP** y microinteracciones puntuales con **Framer Motion**; tratamientos de superficie o gradientes solo con criterio de marca (`04`), no como estética genérica.
 - Accesibilidad orientada a **WCAG 2.1 AA** como piso (contraste, foco, etiquetas).
 - Imágenes con **`next/image`**, lazy loading donde corresponda, y revisión de LCP/CLS al cerrar cada bloque.
 - **Mobile-first** real: cada sección debe comportarse bien desde ~320px, con alternativas claras (stack, carrusel, acordeón) cuando el layout desktop no escala.
 
 ## Estrategia: iterar sección por sección
+
+El **procedimiento operativo** (lecturas previas, checklist por bloque, orden sugerido, mobile-first y formato de entrega) está en [`08-metodologia-de-trabajo.md`](./08-metodologia-de-trabajo.md).
 
 La **estructura global del proyecto ya está implementada** (rutas, secciones, datos de copy, convenciones de carpetas para assets). Por eso el trabajo de alta fidelidad no parte de rehacer el esqueleto, sino de **iterar bloque a bloque**:
 
@@ -42,15 +44,15 @@ Así se reduce riesgo de regresiones y se mantiene un **ritmo de entrega revisab
 
 ## Relación con `claude.md`
 
-El archivo [`../claude.md`](../claude.md) concentra **reglas de trabajo para quien implementa** (leer el tema antes de codificar, SOLID/DRY, sin `any`, listas dinámicas con `.map()`, preferencias de estilo global y por sección, formato de entrega).
+El archivo [`../claude.md`](../claude.md) concentra **stack** y **reglas de código** (SOLID/DRY, sin `any`, `.map()`, performance). La **metodología por sección** y el **formato de entrega** están en [`08-metodologia-de-trabajo.md`](./08-metodologia-de-trabajo.md).
 
-Este **05** fija el **marco de producto y calidad**: prototipo actual, visión de landing final, y el acuerdo de **no rearmar la estructura** sino **pulir y elevar fidelidad** por sección. Si hubiera tensión entre una convención genérica y los docs numerados (`01`–`04`), priman **tema** ([`04-uso-del-tema.md`](./04-uso-del-tema.md)) y **contenido** ([`02-contenido-web.md`](./02-contenido-web.md)) para marca y copy.
+Este **05** fija el **marco de producto y calidad**: prototipo actual, visión de landing final, y el acuerdo de **no rearmar la estructura** sino **pulir y elevar fidelidad** por sección. Si hubiera tensión entre una convención genérica y los docs numerados (`01`–`08`), priman **tema** ([`04-uso-del-tema.md`](./04-uso-del-tema.md)) y **contenido** ([`02-contenido-web.md`](./02-contenido-web.md)) para marca y copy; para **motion**, alinear [`07-motion-y-gsap.md`](./07-motion-y-gsap.md) con `04` y [`../claude.md`](../claude.md); para **cómo iterar**, [`08-metodologia-de-trabajo.md`](./08-metodologia-de-trabajo.md).
 
 ## Checklist orientativo por sección (al cerrar “alta fidelidad”)
 
 - [ ] Colores y tipografía alineados a tokens (`theme` / `var(--…)`), sin grises “sueltos” que compitan con la marca.
 - [ ] Imagen real o ilustración acordada, con `alt` en ambos idiomas.
-- [ ] Animaciones con propósito (no distraer); respeto a `prefers-reduced-motion` donde aplique.
+- [ ] Animaciones con propósito (no distraer); respeto a `prefers-reduced-motion` donde aplique; GSAP/ScrollTrigger con **limpieza** al desmontar (ver [`07-motion-y-gsap.md`](./07-motion-y-gsap.md)).
 - [ ] Contraste y foco verificables en estados hover/focus/active.
 - [ ] Layout probado en al menos un ancho móvil y uno desktop ancho.
 - [ ] Sin regresiones de build ni de i18n para las claves tocadas.
