@@ -1,0 +1,127 @@
+{
+  "languageToggle": {
+    "aria": "Change language",
+    "esShort": "ES",
+    "enShort": "EN"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "social": "Social",
+    "actividades": "Activities",
+    "donations": "Support us",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mobileLabel": "Sections",
+    "scrollToTop": "Back to top"
+  },
+  "social": {
+    "eyebrow": "Gatherings",
+    "title": "Social programs",
+    "intro": "Soccer school, volleyball and games, Peques space and pre-teen meetups—one place to grow, play and share values."
+  },
+  "placeholders": {
+    "hero": "Hero image — placeholder",
+    "about": "About image — placeholder",
+    "donation": "Support image — placeholder",
+    "escuelaFutbol": "Soccer school photo — placeholder",
+    "voleyJuegos": "Volleyball & games photo — placeholder",
+    "peques": "Peques space photo — placeholder",
+    "preadolescentes": "Pre-teens photo — placeholder",
+    "construccion": "Construction / hall photo — placeholder"
+  },
+  "hero": {
+    "titleLine1": "Sembrando",
+    "titleLine2": "Valores",
+    "subtitle": "Non-profit organization",
+    "lead": "We began with a group of young people who wanted to reach a society that needs to recover the values it once had.",
+    "ctaPrimary": "Learn more",
+    "ctaSecondary": "Contact"
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "Our story, motivation and proposal",
+    "body": "Sembrando Valores was born from the concern of a group of young people with the desire to reach a withered society in need of recovering the values it once had. We develop various activities for children, teenagers and adults seeking to transmit values that allow the wholesome development of people and which also have a long term positive impact on our society."
+  },
+  "missionBlock": {
+    "slogan": "Where we are headed, what we do and how we do it.",
+    "title": "Mission, vision and values",
+    "missionTitle": "Mission",
+    "missionText": "To collaborate with those who need it in a wholesome and concrete way by seeking the common good in our society in the most vulnerable sectors so as to achieve specific and extensive goals that generate tangible changes in one’s environment.",
+    "visionTitle": "Vision",
+    "visionText": "Connect all of those who desire to help those who need to be helped and maintain a growing relationship among those people. The objective is to create awareness of solidarity and equality in a community setting.",
+    "valuesTitle": "Values",
+    "valuesText": "Teamwork, humility, effort, generosity, gratitude. These are some of the values that motivate us and that we believe are essential for the development of a society."
+  },
+  "sections": {
+    "escuelaFutbol": {
+      "title": "Soccer school",
+      "body": "More than 40 children aged 5 to 11 find in our school a space to grow, share and learn values through sport. We meet twice a week, Mondays and Wednesdays at 6 p.m., promoting companionship, respect and the joy of playing together."
+    },
+    "voleyJuegos": {
+      "title": "Volleyball and games",
+      "body": "We create a space where volleyball and recreational games become tools to socialize, have fun and develop motor skills in a caring environment."
+    },
+    "peques": {
+      "title": "Peques (little ones)",
+      "body": "Every Saturday we open a space for the youngest where play, learning and snack time come together. We seek to support their growth in a caring setting, encouraging creativity, confidence and bonds with others."
+    },
+    "preadolescentes": {
+      "title": "Pre-teens (11 to 15 years old)",
+      "body": "On Saturdays from 6 to 8 p.m. we offer a place designed for pre-teens where they can express themselves, share and be heard. Through activities, games and gatherings we strengthen relationships and promote values at a key stage of their lives."
+    },
+    "construccion": {
+      "title": "Construction and infrastructure",
+      "body": "We continue to advance the construction of our multi-purpose hall, a fundamental space to ensure activities can run year-round. Every step is possible thanks to the effort and commitment of the whole community."
+    }
+  },
+  "donation": {
+    "eyebrow": "Would you like to collaborate with us?",
+    "title": "Help us help others",
+    "body": "To keep moving forward you can collaborate and join our current projects—with furniture, utensils, clothing, food or monetary support through our bank account.",
+    "bankTitle": "Bank account details",
+    "bankLabel": "Bank",
+    "bankValue": "Banco de Santa Fe",
+    "accountNameLabel": "Account name",
+    "accountNameValue": "ASOCIACION CIVIL SEMBRANDO VA",
+    "accountTypeLabel": "Account type (ARS)",
+    "accountTypeValue": "Cuenta corriente especial personas jurídicas",
+    "numberLabel": "Number",
+    "numberValue": "022 - 131801/03",
+    "cbuLabel": "CBU",
+    "cbuValue": "3300022820220131801037",
+    "aliasLabel": "Alias",
+    "aliasValue": "ASOC.SEM.VAL"
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "How to reach us",
+    "body": "If you have any questions or want to know more about our organization, contact us through social media, email or WhatsApp. You can also visit us in person at Monti Street No. 90 (formerly Street No. 47; see map).",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone / WhatsApp",
+    "addressLabel": "Address",
+    "email": "acivil_admin@sembrandovalores.net",
+    "phoneDisplay": "+54 9 3462 549129",
+    "addressLine": "Monti Street No. 90 (formerly No. 47), Venado Tuerto",
+    "mapTitle": "Location on map"
+  },
+  "footer": {
+    "brand": "Sembrando Valores",
+    "tagline": "A non-profit dedicated to sharing values and supporting those who need it most.",
+    "columnNav": "Navigation",
+    "columnContact": "Contact",
+    "location": "Location",
+    "phone": "Phone / WhatsApp",
+    "email": "Email",
+    "copyright": "A. C. Sembrando Valores",
+    "rightsReserved": "All rights reserved.",
+    "ariaMail": "Send email",
+    "ariaWhatsapp": "Open WhatsApp",
+    "ariaInstagram": "Open Instagram"
+  },
+  "meta": {
+    "title": "A. C. Sembrando Valores",
+    "description": "Sembrando Valores — soccer school, volleyball, Peques space, pre-teens and infrastructure. Venado Tuerto, Santa Fe, Argentina."
+  }
+}
