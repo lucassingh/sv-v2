@@ -33,8 +33,8 @@ import { theme, themeColors, themeFontFamily, themeFontSize } from "@/theme";
 
 ```ts
 theme.colors.primary;   // "#2f3f44"
-theme.colors.secondary; // "#94bbc4"
-theme.colors.accent;    // "#1E4B6E"
+theme.colors.secondary; // "#1E4B6E"
+theme.colors.accent;    // "#f3f0e4"
 theme.colors.light;     // "#ffffff"
 theme.colors.dark;      // "#1b1b1e"
 ```

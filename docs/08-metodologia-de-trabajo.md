@@ -38,6 +38,9 @@ Orden recomendado la primera vez (o al retomar el proyecto):
 
 **Etiqueta:** *Editorial Grid-Breaking* con **énfasis tipográfico** y narrativa **scroll-triggered**. En una frase: **estudio creativo minimalista con jerarquía tipográfica**.
 
+**URL de web con la principal propuesta para imitar** 
+- https://realnoni.com/
+
 **URLs de referencia** (layout, ritmo, tipografía y scroll; **no** copiar assets ni marca ajenas):
 
 - https://ricardoseola.com/salvato/
