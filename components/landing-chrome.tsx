@@ -3,6 +3,7 @@
 import type { ReactNode } from "react";
 import { useEffect } from "react";
 import { SiteHeader } from "@/components/sections/site-header";
+import { FloatingSocialRail } from "@/components/floating-social-rail";
 import { ScrollToTopButton } from "@/components/scroll-to-top-button";
 import { useLandingScroll } from "@/hooks/use-landing-scroll";
 import { applyInitialHashSection } from "@/lib/scroll-to-section";
@@ -12,7 +13,7 @@ type LandingChromeProps = {
 };
 
 export function LandingChrome({ children }: LandingChromeProps) {
-  const { activeSectionId, showScrollToTop } = useLandingScroll();
+  const { activeSectionId, navBackdrop, fabBackdrop, showScrollToTop } = useLandingScroll();
 
   useEffect(() => {
     applyInitialHashSection();
@@ -20,9 +21,10 @@ export function LandingChrome({ children }: LandingChromeProps) {
 
   return (
     <>
-      <SiteHeader activeSectionId={activeSectionId} />
+      <SiteHeader activeSectionId={activeSectionId} navBackdrop={navBackdrop} />
       {children}
-      <ScrollToTopButton visible={showScrollToTop} />
+      <FloatingSocialRail visible={showScrollToTop} fabBackdrop={fabBackdrop} />
+      <ScrollToTopButton visible={showScrollToTop} fabBackdrop={fabBackdrop} />
     </>
   );
 }

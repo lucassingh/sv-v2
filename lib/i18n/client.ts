@@ -34,6 +34,8 @@ if (!i18n.isInitialized) {
     fallbackLng: "es",
     defaultNS: "translation",
     ns: ["translation"],
+    /** Claves con puntos siguen el JSON anidado (p. ej. `sections.minorThread.eyebrow`). */
+    ignoreJSONStructure: false,
     interpolation: { escapeValue: false },
     react: { useSuspense: false },
     initAsync: false,

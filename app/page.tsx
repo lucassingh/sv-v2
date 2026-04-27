@@ -10,7 +10,7 @@ import { Footer } from "@/components/sections/footer";
 export default function Home() {
   return (
     <LandingChrome>
-      <main className="min-h-screen bg-zinc-50">
+      <main className="min-h-screen border-0 bg-zinc-50">
         <HeroSection />
         <AboutSection />
         <SocialSection />
