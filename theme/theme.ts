@@ -25,8 +25,8 @@ function fontStack(
 /** Paleta principal (hex). */
 export const themeColors = {
   primary: "#2f3f44",
-  secondary: "#94bbc4",
-  accent: "#1E4B6E",
+  secondary: "#1E4B6E",
+  accent: "#f3f0e4",
   light: "#ffffff",
   dark: "#1b1b1e",
 } as const;
@@ -46,7 +46,6 @@ export const themeFontFamily = {
   sans: fontStack(fontCssVarNames.sans, "Roboto Condensed", "sans-serif"),
 } as const;
 
-/** Escala de tamaños (rem). Aún no enlazada a Tailwind; lista para `style` o futura capa @theme. */
 export const themeFontSize = {
   xs: "0.75rem",
   sm: "0.875rem",

@@ -71,6 +71,10 @@ La coherencia **no** es “todas las secciones iguales en densidad”: puede hab
 
 ---
 
+### Reglas de felxibilidad
+
+- Podes hacer que las secciones no sean como esta hoy el prototipo por ej, que en alguna seccion no utilices una img por que es una seccion disruptiva y distinta a las demas (es solo un ej) o que es una seccion que realzas con un background del tema y tipografia super gigante, o utilices la imagen super grande con una mascara etc.
+
 ## 4. Cómo empezar a “vestir” el estilo sin romper nada
 
 No hace falta un branch gigante que toque todo el sitio.

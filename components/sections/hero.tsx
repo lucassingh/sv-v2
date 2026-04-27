@@ -1,149 +1,259 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Image from "next/image";
+import { useRef, useEffect, useCallback } from "react";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useMotionTemplate,
+} from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { ArrowRight } from "lucide-react";
-import { BackgroundGradient } from "@/components/aceternity/background-gradient";
-import { Spotlight } from "@/components/aceternity/spotlight";
-import { GridPattern } from "@/components/aceternity/grid-pattern";
-import { MediaPlaceholder } from "@/components/aceternity/media-placeholder";
 import { sectionIds } from "@/lib/section-ids";
 import { handleInPageNavClick } from "@/lib/scroll-to-section";
-import { sectionContainer, sectionYHero } from "@/lib/section-layout";
+
+// Colores en RGB para usar en gradientes inline
+const PRIMARY_RGB = "47, 63, 68";
+const ACCENT_RGB  = "243, 240, 228";
+
+const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+/**
+ * Tiras de escala — rasgo visual del patrón "Shadow & Scales":
+ * líneas verticales que encuadran la imagen con un aspecto medido.
+ */
+function ScaleStrips({ count = 28 }: { count?: number }) {
+  return (
+    <div
+      aria-hidden
+      className="h-4 w-full sm:h-5"
+      style={{
+        backgroundImage: `repeating-linear-gradient(
+          90deg,
+          transparent 0,
+          transparent calc(100% / ${count} - 1px),
+          rgba(${ACCENT_RGB}, 0.08) calc(100% / ${count} - 1px),
+          rgba(${ACCENT_RGB}, 0.08) calc(100% / ${count})
+        )`,
+      }}
+    />
+  );
+}
 
 export function HeroSection() {
   const { t } = useTranslation();
+  const sectionRef = useRef<HTMLElement>(null);
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
-      },
-    },
-  };
+  // ── Cursor spotlight suave ──────────────────────────────────
+  const rawX = useMotionValue(50);
+  const rawY = useMotionValue(50);
+  const spotX = useSpring(rawX, { stiffness: 55, damping: 18 });
+  const spotY = useSpring(rawY, { stiffness: 55, damping: 18 });
+  const spotlight = useMotionTemplate`radial-gradient(
+    600px circle at ${spotX}% ${spotY}%,
+    rgba(148, 187, 196, 0.09) 0%,
+    transparent 70%
+  )`;
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-      },
+  const onMouseMove = useCallback(
+    (e: MouseEvent) => {
+      const el = sectionRef.current;
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      rawX.set(((e.clientX - rect.left) / rect.width) * 100);
+      rawY.set(((e.clientY - rect.top) / rect.height) * 100);
     },
-  };
+    [rawX, rawY],
+  );
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    el.addEventListener("mousemove", onMouseMove);
+    return () => el.removeEventListener("mousemove", onMouseMove);
+  }, [onMouseMove]);
 
   return (
     <section
+      ref={sectionRef}
       id={sectionIds.inicio}
-      className={`relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-b from-white to-zinc-100 ${sectionYHero}`}
+      data-nav-backdrop="dark"
+      className="relative flex min-h-screen flex-col overflow-hidden bg-(--color-primary) pb-0"
+      style={{ paddingTop: "calc(var(--anchor-offset) + 2.5rem)" }}
     >
-      <BackgroundGradient />
-      <GridPattern className="z-[1]" />
-      <Spotlight className="z-[1]" />
+      {/* ── Spotlight de cursor ──────────────────────────────── */}
+      <motion.div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-0"
+        style={{ backgroundImage: spotlight }}
+      />
 
-      <div className={`relative z-10 ${sectionContainer}`}>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-col items-center gap-8 sm:gap-10 lg:flex-row lg:gap-12"
+      {/* ── Contenido textual ───────────────────────────────── */}
+      <div className="relative z-10 mx-auto w-full max-w-(--layout-content-max) px-4 sm:px-6 lg:px-8">
+
+        {/* Eyebrow */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.9, delay: 0.1, ease: EASE }}
+          style={{
+            fontFamily: "var(--font-family-sans)",
+            color: `rgba(${ACCENT_RGB}, 0.38)`,
+          }}
+          className="text-[10px] font-medium uppercase tracking-[0.28em]"
         >
-          <motion.div variants={itemVariants} className="flex-1">
-            <motion.h1
-              className="font-serif text-4xl font-bold leading-[1.1] text-zinc-900 sm:text-5xl md:text-6xl lg:text-7xl"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
+          {t("hero.subtitle")}
+        </motion.p>
+
+        {/* Línea separadora animada */}
+        <motion.span
+          aria-hidden
+          className="mt-3 block h-px"
+          style={{ backgroundColor: `rgba(${ACCENT_RGB}, 0.18)`, transformOrigin: "left center" }}
+          initial={{ scaleX: 0, width: "3rem" }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.65, delay: 0.22, ease: EASE }}
+        />
+
+        {/* Título — split-line reveal (cada línea sube desde máscara) */}
+        <h1
+          className="mt-4 text-[clamp(3.75rem,10vw,7.5rem)]"
+          style={{
+            fontFamily: "var(--font-family-serif)",
+            color: "var(--color-accent)",
+            lineHeight: 0.95,
+            letterSpacing: "-0.02em",
+          }}
+        >
+          <span className="block overflow-hidden">
+            <motion.span
+              className="block"
+              initial={{ y: "108%" }}
+              animate={{ y: "0%" }}
+              transition={{ duration: 0.9, delay: 0.28, ease: EASE }}
             >
               {t("hero.titleLine1")}
-              <span className="block bg-gradient-to-r from-zinc-700 to-zinc-900 bg-clip-text text-transparent">
-                {t("hero.titleLine2")}
-              </span>
-            </motion.h1>
-
-            <motion.p
-              variants={itemVariants}
-              className="mt-2 text-base tracking-[0.15em] text-zinc-600 sm:text-lg sm:tracking-[0.2em] md:text-xl"
+            </motion.span>
+          </span>
+          <span className="block overflow-hidden">
+            <motion.span
+              className="block"
+              initial={{ y: "108%" }}
+              animate={{ y: "0%" }}
+              transition={{ duration: 0.9, delay: 0.42, ease: EASE }}
             >
-              {t("hero.subtitle")}
-            </motion.p>
+              {t("hero.titleLine2")}
+            </motion.span>
+          </span>
+        </h1>
 
-            <motion.p
-              variants={itemVariants}
-              className="mt-5 max-w-lg text-base leading-relaxed text-zinc-600 sm:mt-6 sm:text-lg md:text-xl"
-            >
-              {t("hero.lead")}
-            </motion.p>
-
-            <motion.div
-              variants={itemVariants}
-              className="mt-6 flex flex-wrap gap-3 sm:mt-8 sm:gap-4"
-            >
-              <a
-                href={`#${sectionIds.nosotros}`}
-                className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-zinc-800 px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-zinc-900 sm:min-h-12 sm:px-8 sm:py-3 sm:text-base sm:hover:scale-105"
-                onClick={(e) => handleInPageNavClick(e, sectionIds.nosotros)}
-              >
-                {t("hero.ctaPrimary")}
-                <ArrowRight className="size-5 shrink-0" strokeWidth={2} aria-hidden />
-              </a>
-              <a
-                href={`#${sectionIds.contacto}`}
-                className="min-h-11 rounded-lg border-2 border-zinc-700 px-6 py-2.5 text-sm font-semibold text-zinc-800 transition-all duration-300 hover:bg-zinc-100 sm:min-h-12 sm:px-8 sm:py-3 sm:text-base"
-                onClick={(e) => handleInPageNavClick(e, sectionIds.contacto)}
-              >
-                {t("hero.ctaSecondary")}
-              </a>
-            </motion.div>
-          </motion.div>
-
-          <motion.div
-            variants={itemVariants}
-            className="relative w-full flex-1 lg:max-w-[52%]"
+        {/* Lead + CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6, ease: EASE }}
+          className="mt-8 flex flex-col gap-6 sm:mt-10 sm:flex-row sm:items-end sm:justify-between"
+        >
+          <p
+            style={{
+              fontFamily: "var(--font-family-sans)",
+              color: `rgba(${ACCENT_RGB}, 0.52)`,
+            }}
+            className="max-w-[38ch] text-sm leading-relaxed sm:text-[0.9375rem]"
           >
-            <motion.div
-              className="relative w-full"
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-            >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-zinc-200/80 to-zinc-300/50 opacity-70 blur-2xl" />
-              <div className="relative">
-                <MediaPlaceholder label={t("placeholders.hero")} className="shadow-xl" />
-              </div>
-            </motion.div>
+            {t("hero.lead")}
+          </p>
 
-            <motion.div
-              className="absolute -top-8 -right-4 h-24 w-24 rounded-full bg-zinc-200/80 opacity-70 max-lg:hidden"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.div
-              className="absolute -bottom-4 -left-4 h-20 w-20 rounded-full bg-zinc-300/60 opacity-70 max-lg:hidden"
-              animate={{ rotate: -360 }}
-              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            />
-          </motion.div>
+          <div className="flex shrink-0 flex-wrap gap-3">
+            {/* CTA primario — fondo accent, texto primary */}
+            <motion.a
+              href={`#${sectionIds.nosotros}`}
+              whileHover={{ opacity: 0.88 }}
+              style={{
+                fontFamily: "var(--font-family-sans)",
+                backgroundColor: "var(--color-accent)",
+                color: "var(--color-primary)",
+              }}
+              className="inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] transition-opacity duration-200 sm:px-6 sm:py-3"
+              onClick={(e) => handleInPageNavClick(e, sectionIds.nosotros)}
+            >
+              {t("hero.ctaPrimary")}
+              <ArrowRight className="size-3.5 shrink-0" strokeWidth={2.5} aria-hidden />
+            </motion.a>
+
+            {/* CTA secundario — borde + texto accent */}
+            <motion.a
+              href={`#${sectionIds.contacto}`}
+              initial={{
+                borderColor: `rgba(${ACCENT_RGB}, 0.28)`,
+                color: `rgba(${ACCENT_RGB}, 0.6)`,
+              }}
+              whileHover={{
+                borderColor: `rgba(${ACCENT_RGB}, 0.55)`,
+                color: `rgba(${ACCENT_RGB}, 1)`,
+              }}
+              transition={{ duration: 0.18 }}
+              style={{
+                fontFamily: "var(--font-family-sans)",
+                borderColor: `rgba(${ACCENT_RGB}, 0.28)`,
+                color: `rgba(${ACCENT_RGB}, 0.6)`,
+              }}
+              className="inline-flex items-center rounded-lg border px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] sm:px-6 sm:py-3"
+              onClick={(e) => handleInPageNavClick(e, sectionIds.contacto)}
+            >
+              {t("hero.ctaSecondary")}
+            </motion.a>
+          </div>
         </motion.div>
       </div>
 
+      {/* ── Imagen con scale strips y perspectiva ─────────────── */}
       <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 transform"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
+        initial={{ opacity: 0, y: 44 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, delay: 0.5, ease: EASE }}
+        className="relative z-10 mt-10 flex flex-1 flex-col sm:mt-14"
       >
-        <div className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-zinc-400 pt-2">
-          <motion.div
-            className="h-2 w-1 rounded-full bg-zinc-500"
-            animate={{ y: [0, 6, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
+        <ScaleStrips count={28} />
+
+        <div className="relative flex-1">
+          <div
+            className="relative h-full min-h-[40vh] overflow-hidden sm:min-h-[50vh]"
+            style={{
+              transform: "perspective(1400px) rotateX(5deg) scale(0.995)",
+              transformOrigin: "50% 0%",
+            }}
+          >
+            {/* Degradados de fusión */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-2/5"
+              style={{ background: `linear-gradient(to top, rgb(${PRIMARY_RGB}), transparent)` }}
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 sm:w-28"
+              style={{ background: `linear-gradient(to right, rgba(${PRIMARY_RGB}, 0.7), transparent)` }}
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 sm:w-28"
+              style={{ background: `linear-gradient(to left, rgba(${PRIMARY_RGB}, 0.7), transparent)` }}
+            />
+
+            <Image
+              src="/assets/1-hero/hero.jpg"
+              alt={t("hero.imageAlt")}
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
+          </div>
         </div>
+
+        <ScaleStrips count={28} />
       </motion.div>
     </section>
   );

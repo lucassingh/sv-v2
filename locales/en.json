@@ -37,7 +37,8 @@
     "subtitle": "Non-profit organization",
     "lead": "We began with a group of young people who wanted to reach a society that needs to recover the values it once had.",
     "ctaPrimary": "Learn more",
-    "ctaSecondary": "Contact"
+    "ctaSecondary": "Contact",
+    "imageAlt": "Activities of the Sembrando Valores non-profit organization"
   },
   "about": {
     "eyebrow": "About us",
@@ -45,7 +46,7 @@
     "body": "Sembrando Valores was born from the concern of a group of young people with the desire to reach a withered society in need of recovering the values it once had. We develop various activities for children, teenagers and adults seeking to transmit values that allow the wholesome development of people and which also have a long term positive impact on our society."
   },
   "missionBlock": {
-    "slogan": "Where we are headed, what we do and how we do it.",
+    "slogan": "Where are we going?\nWhat do we do?\nHow do we do it?",
     "title": "Mission, vision and values",
     "missionTitle": "Mission",
     "missionText": "To collaborate with those who need it in a wholesome and concrete way by seeking the common good in our society in the most vulnerable sectors so as to achieve specific and extensive goals that generate tangible changes in one’s environment.",
@@ -55,25 +56,72 @@
     "valuesText": "Teamwork, humility, effort, generosity, gratitude. These are some of the values that motivate us and that we believe are essential for the development of a society."
   },
   "sections": {
+    "minorThread": {
+      "eyebrow": "One same place",
+      "title": "Three gatherings that continue the story",
+      "lead": "From team play to the little ones' space and pre-teens finding their voice—each program adds a chapter to what we build together."
+    },
     "escuelaFutbol": {
       "title": "Soccer school",
-      "body": "More than 40 children aged 5 to 11 find in our school a space to grow, share and learn values through sport. We meet twice a week, Mondays and Wednesdays at 6 p.m., promoting companionship, respect and the joy of playing together."
+      "body": "More than 40 children aged 5 to 11 find in our school a space to grow, share and learn values through sport. We meet twice a week, Mondays and Wednesdays at 6 p.m., promoting companionship, respect and the joy of playing together.",
+      "imageMainAlt": "Boys and girls at the Sembrando Valores soccer school",
+      "imageLeftAlt": "Group practicing soccer on the field",
+      "imageRightAlt": "Playing with the ball during a soccer school session",
+      "imageTeamAlt": "Soccer school team posing on the field in Sembrando Valores jerseys"
     },
     "voleyJuegos": {
       "title": "Volleyball and games",
-      "body": "We create a space where volleyball and recreational games become tools to socialize, have fun and develop motor skills in a caring environment."
+      "body": "We create a space where volleyball and recreational games become tools to socialize, have fun and develop motor skills in a caring environment.",
+      "imageAlt": "Children playing volleyball and recreational games at Sembrando Valores"
     },
     "peques": {
       "title": "Peques (little ones)",
-      "body": "Every Saturday we open a space for the youngest where play, learning and snack time come together. We seek to support their growth in a caring setting, encouraging creativity, confidence and bonds with others."
+      "body": "Every Saturday we open a space for the youngest where play, learning and snack time come together. We seek to support their growth in a caring setting, encouraging creativity, confidence and bonds with others.",
+      "imageAlt": "Activities and play in the Peques space for the youngest children"
     },
     "preadolescentes": {
       "title": "Pre-teens (11 to 15 years old)",
-      "body": "On Saturdays from 6 to 8 p.m. we offer a place designed for pre-teens where they can express themselves, share and be heard. Through activities, games and gatherings we strengthen relationships and promote values at a key stage of their lives."
+      "body": "On Saturdays from 6 to 8 p.m. we offer a place designed for pre-teens where they can express themselves, share and be heard. Through activities, games and gatherings we strengthen relationships and promote values at a key stage of their lives.",
+      "imageAlt": "Pre-teens at a group gathering of the association"
     },
     "construccion": {
+      "eyebrow": "Building the hall",
       "title": "Construction and infrastructure",
-      "body": "We continue to advance the construction of our multi-purpose hall, a fundamental space to ensure activities can run year-round. Every step is possible thanks to the effort and commitment of the whole community."
+      "body": "We continue to advance the construction of our multi-purpose hall, a fundamental space to ensure activities can run year-round. Every step is possible thanks to the effort and commitment of the whole community.",
+      "deskVideoAria": "Construction progress and multi-purpose hall, desktop preview",
+      "mobVideoAria": "Construction progress and multi-purpose hall, mobile preview",
+      "videoPlay": "Play video",
+      "videoPause": "Pause video",
+      "carousel": {
+        "items": [
+          {
+            "category": "Work in progress",
+            "title": "Week by week,\nthe hall takes shape"
+          },
+          {
+            "category": "The hall",
+            "title": "A roof over\neverything we do"
+          },
+          {
+            "category": "Community",
+            "title": "Hands that build\nand stand by us"
+          },
+          {
+            "category": "Structure",
+            "title": "Columns and roof:\nthe hall takes shape"
+          },
+          {
+            "category": "Every detail",
+            "title": "The same care\nin every corner"
+          },
+          {
+            "category": "Coming soon",
+            "title": "A place of our own\nto keep on growing"
+          }
+        ]
+      },
+      "safariTabTitle": "Sembrando Valores — Building the hall",
+      "safariAddressUrl": "https://sembrandovalores.org"
     }
   },
   "donation": {
@@ -85,14 +133,24 @@
     "bankValue": "Banco de Santa Fe",
     "accountNameLabel": "Account name",
     "accountNameValue": "ASOCIACION CIVIL SEMBRANDO VA",
-    "accountTypeLabel": "Account type (ARS)",
-    "accountTypeValue": "Cuenta corriente especial personas jurídicas",
+    "accountTypeLabel": "Account type (Argentine pesos, ARS)",
+    "accountTypeValue": "Cuenta Corriente Especial Personas Jurídicas",
     "numberLabel": "Number",
     "numberValue": "022 - 131801/03",
     "cbuLabel": "CBU",
     "cbuValue": "3300022820220131801037",
     "aliasLabel": "Alias",
-    "aliasValue": "ASOC.SEM.VAL"
+    "aliasValue": "ASOC.SEM.VAL",
+    "imageAlt": "Volunteers and collaboration at Sembrando Valores",
+    "copiedToast": "Copied",
+    "copyButton": "Copy",
+    "spark1Title": "In-kind",
+    "spark1Hint": "Furniture, supplies, clothing, and food",
+    "spark2Title": "Bank transfer",
+    "spark2Hint": "Institutional account details below",
+    "spark3Title": "Projects",
+    "spark3Hint": "Join what we are building today",
+    "marqueeWords": "Collaborate|Resilience|Donation|Love|Teamwork|Solidarity|Community|Volunteering|Generosity|Gratitude|Values|Hope"
   },
   "contact": {
     "eyebrow": "Contact",
@@ -100,8 +158,10 @@
     "body": "If you have any questions or want to know more about our organization, contact us through social media, email or WhatsApp. You can also visit us in person at Monti Street No. 90 (formerly Street No. 47; see map).",
     "emailLabel": "Email",
     "phoneLabel": "Phone / WhatsApp",
+    "instagramLabel": "Instagram",
+    "instagramCta": "@sembrandovalores.vt",
     "addressLabel": "Address",
-    "email": "acivil_admin@sembrandovalores.net",
+    "email": "andresrog95@gmail.com",
     "phoneDisplay": "+54 9 3462 549129",
     "addressLine": "Monti Street No. 90 (formerly No. 47), Venado Tuerto",
     "mapTitle": "Location on map"
@@ -109,6 +169,7 @@
   "footer": {
     "brand": "Sembrando Valores",
     "tagline": "A non-profit dedicated to sharing values and supporting those who need it most.",
+    "followHeading": "Follow us on social",
     "columnNav": "Navigation",
     "columnContact": "Contact",
     "location": "Location",

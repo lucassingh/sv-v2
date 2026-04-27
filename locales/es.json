@@ -37,7 +37,8 @@
     "subtitle": "Asociación Civil",
     "lead": "Nacimos de la inquietud de un grupo de jóvenes con el deseo de llegar a una sociedad que necesita recuperar los valores que en un momento tuvo.",
     "ctaPrimary": "Ver más",
-    "ctaSecondary": "Contacto"
+    "ctaSecondary": "Contacto",
+    "imageAlt": "Actividades de la Asociación Civil Sembrando Valores"
   },
   "about": {
     "eyebrow": "Sobre nosotros",
@@ -45,7 +46,7 @@
     "body": "La Asociación Civil Sembrando Valores nace de la inquietud de un grupo de jóvenes con el deseo de llegar a una sociedad marchita que necesita recuperar los valores que en un momento tuvo. Se desarrollan diversas actividades que involucran a niños, adolescentes y adultos buscando transmitir valores que permitan el desarrollo integral de las personas y que a largo plazo impacten para bien en nuestra sociedad."
   },
   "missionBlock": {
-    "slogan": "¿Adónde vamos? ¿Qué hacemos? y ¿Cómo lo hacemos?",
+    "slogan": "¿Adónde vamos?\n¿Qué hacemos?\n¿Cómo lo hacemos?",
     "title": "Misión, visión y valores",
     "missionTitle": "Misión",
     "missionText": "Ayudar a las personas que lo necesiten, de forma integral y concreta, procurando el bien común en nuestra sociedad en los sectores más vulnerables, llegando a establecer un trabajo definido y profundo, que genere cambios tangibles en nuestro entorno social.",
@@ -55,25 +56,72 @@
     "valuesText": "Amor, humildad, esfuerzo, generosidad, gratitud, solidaridad y trabajo en equipo. Son algunos de los valores que nos mueven y creemos fundamentales para el desarrollo de una sociedad sana."
   },
   "sections": {
+    "minorThread": {
+      "eyebrow": "Un mismo lugar",
+      "title": "Tres encuentros que siguen la historia",
+      "lead": "Del juego en equipo al espacio de los más chicos y a la voz de los preadolescentes: cada propuesta suma un capítulo a lo que construimos juntos."
+    },
     "escuelaFutbol": {
       "title": "Escuela de fútbol",
-      "body": "Más de 40 niños de 5 a 11 años encuentran en nuestra escuela un espacio para crecer, compartir y aprender valores a través del deporte. Nos reunimos dos veces por semana, los lunes y miércoles a las 18 hs, promoviendo el compañerismo, el respeto y la alegría de jugar juntos."
+      "body": "Más de 40 niños de 5 a 11 años encuentran en nuestra escuela un espacio para crecer, compartir y aprender valores a través del deporte. Nos reunimos dos veces por semana, los lunes y miércoles a las 18 hs, promoviendo el compañerismo, el respeto y la alegría de jugar juntos.",
+      "imageMainAlt": "Niños y niñas en la escuela de fútbol de Sembrando Valores",
+      "imageLeftAlt": "Grupo en entrenamiento de fútbol en la cancha",
+      "imageRightAlt": "Juego con pelota durante una clase de la escuela de fútbol",
+      "imageTeamAlt": "Equipo de la escuela de fútbol posando en la cancha con la camiseta de Sembrando Valores"
     },
     "voleyJuegos": {
       "title": "Vóley y juegos",
-      "body": "Generamos un espacio pensado donde el vóley y los juegos recreativos se convierten en herramientas para socializar, divertirse y desarrollar habilidades motrices en un ambiente cuidado."
+      "body": "Generamos un espacio pensado donde el vóley y los juegos recreativos se convierten en herramientas para socializar, divertirse y desarrollar habilidades motrices en un ambiente cuidado.",
+      "imageAlt": "Niñas y niños jugando al vóley y juegos recreativos en Sembrando Valores"
     },
     "peques": {
       "title": "Peques",
-      "body": "Cada sábado abrimos un espacio para los más pequeños donde el juego, el aprendizaje y la merienda se combinan. Buscamos acompañar su crecimiento en un entorno afectivo, estimulando la creatividad, la confianza y el vínculo con otros."
+      "body": "Cada sábado abrimos un espacio para los más pequeños donde el juego, el aprendizaje y la merienda se combinan. Buscamos acompañar su crecimiento en un entorno afectivo, estimulando la creatividad, la confianza y el vínculo con otros.",
+      "imageAlt": "Actividades y juego en el espacio Peques para los más pequeños"
     },
     "preadolescentes": {
       "title": "Preadolescentes (11 a 15 años)",
-      "body": "Los sábados de 18 a 20 hs ofrecemos un lugar pensado para preadolescentes, donde pueden expresarse, compartir y ser escuchados. A través de actividades, juegos y encuentros, fortalecemos vínculos y promovemos valores en una etapa clave de sus vidas."
+      "body": "Los sábados de 18 a 20 hs ofrecemos un lugar pensado para preadolescentes, donde pueden expresarse, compartir y ser escuchados. A través de actividades, juegos y encuentros, fortalecemos vínculos y promovemos valores en una etapa clave de sus vidas.",
+      "imageAlt": "Preadolescentes en encuentro grupal de la asociación"
     },
     "construccion": {
+      "eyebrow": "Obra y salón",
       "title": "Construcción e infraestructura",
-      "body": "Seguimos avanzando en la construcción de nuestro salón de usos múltiples, un espacio fundamental para garantizar la continuidad de las actividades durante todo el año. Cada paso es posible gracias al esfuerzo y compromiso de toda la comunidad."
+      "body": "Seguimos avanzando en la construcción de nuestro salón de usos múltiples, un espacio fundamental para garantizar la continuidad de las actividades durante todo el año. Cada paso es posible gracias al esfuerzo y compromiso de toda la comunidad.",
+      "deskVideoAria": "Avance de la obra y el salón de usos múltiples, vista en escritorio",
+      "mobVideoAria": "Avance de la obra y el salón de usos múltiples, vista en móvil",
+      "videoPlay": "Reproducir video",
+      "videoPause": "Pausar video",
+      "carousel": {
+        "items": [
+          {
+            "category": "Obra en marcha",
+            "title": "Semana a semana,\nel salón toma forma"
+          },
+          {
+            "category": "El salón",
+            "title": "Un techo para\ntodas las actividades"
+          },
+          {
+            "category": "Comunidad",
+            "title": "Manos que construyen\ny acompañan"
+          },
+          {
+            "category": "Estructura",
+            "title": "Columnas y techo:\nel salón va tomando forma"
+          },
+          {
+            "category": "Cada detalle",
+            "title": "Mismo cuidado\nen cada rincón"
+          },
+          {
+            "category": "Próximamente",
+            "title": "Un lugar nuestro\npara seguir creciendo"
+          }
+        ]
+      },
+      "safariTabTitle": "Sembrando Valores — Obra y salón",
+      "safariAddressUrl": "https://sembrandovalores.org"
     }
   },
   "donation": {
@@ -85,14 +133,24 @@
     "bankValue": "Banco de Santa Fe",
     "accountNameLabel": "Nombre de la cuenta",
     "accountNameValue": "ASOCIACION CIVIL SEMBRANDO VA",
-    "accountTypeLabel": "Tipo de cuenta ARS",
-    "accountTypeValue": "Cuenta corriente especial personas jurídicas",
+    "accountTypeLabel": "Tipo de cuenta (en pesos argentinos)",
+    "accountTypeValue": "Cuenta Corriente Especial Personas Jurídicas",
     "numberLabel": "Número",
     "numberValue": "022 - 131801/03",
     "cbuLabel": "CBU",
     "cbuValue": "3300022820220131801037",
     "aliasLabel": "Alias",
-    "aliasValue": "ASOC.SEM.VAL"
+    "aliasValue": "ASOC.SEM.VAL",
+    "imageAlt": "Voluntarios y colaboración en Sembrando Valores",
+    "copiedToast": "Copiado",
+    "copyButton": "Copiar",
+    "spark1Title": "En especie",
+    "spark1Hint": "Muebles, útiles, ropa y alimentos",
+    "spark2Title": "Transferencia",
+    "spark2Hint": "Cuenta bancaria de la asociación",
+    "spark3Title": "Proyectos",
+    "spark3Hint": "Sumate a lo que estamos construyendo",
+    "marqueeWords": "Colaborá|Resiliencia|Donación|Amor|Trabajo en equipo|Solidaridad|Comunidad|Voluntariado|Generosidad|Gratitud|Valores|Esperanza"
   },
   "contact": {
     "eyebrow": "Contacto",
@@ -100,8 +158,10 @@
     "body": "Si tenés alguna duda o querés saber más acerca de nuestra asociación, no dudes en contactarnos a través de nuestras redes sociales, por nuestro correo electrónico o por WhatsApp. Además, podés visitarnos personalmente en Calle Monti N° 90 (ex calle N° 47; ver mapa).",
     "emailLabel": "Email",
     "phoneLabel": "Tel / WhatsApp",
+    "instagramLabel": "Instagram",
+    "instagramCta": "@sembrandovalores.vt",
     "addressLabel": "Dirección",
-    "email": "acivil_admin@sembrandovalores.net",
+    "email": "andresrog95@gmail.com",
     "phoneDisplay": "+54 9 3462 549129",
     "addressLine": "Calle Monti N° 90 (ex calle N° 47), Venado Tuerto",
     "mapTitle": "Ubicación en el mapa"
@@ -109,6 +169,7 @@
   "footer": {
     "brand": "Sembrando Valores",
     "tagline": "Asociación civil dedicada a transmitir valores y acompañar a quienes más lo necesitan.",
+    "followHeading": "Seguinos en redes",
     "columnNav": "Navegación",
     "columnContact": "Contacto",
     "location": "Ubicación",
