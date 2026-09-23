@@ -120,6 +120,25 @@
   .scroll-fade {
     @apply transition-all duration-500;
   }
+
+  /* Gradiente sutil primary → secondary (azul) → primary para el loader inicial */
+  .loader-gradient {
+    background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-primary) 100%);
+    background-size: 220% 220%;
+    animation: loader-gradient-pan 8s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .loader-gradient {
+      animation: none;
+      background-position: 50% 50%;
+    }
+  }
+}
+
+@keyframes loader-gradient-pan {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 /* Custom scrollbar */

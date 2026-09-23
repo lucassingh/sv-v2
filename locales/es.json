@@ -184,5 +184,8 @@
   "meta": {
     "title": "A. C. Sembrando Valores",
     "description": "Asociación Civil Sembrando Valores — escuela de fútbol, vóley, espacio Peques, preadolescentes e infraestructura. Venado Tuerto, Santa Fe."
+  },
+  "loader": {
+    "status": "Cargando Sembrando Valores…"
   }
 }

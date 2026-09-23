@@ -10,6 +10,7 @@ import { sectionIds, SITE_FOOTER_ID, type NavSectionId } from "@/lib/section-ids
 import { handleInPageNavClick } from "@/lib/scroll-to-section";
 import { CONTACT_EMAIL, INSTAGRAM_HREF, WHATSAPP_HREF } from "@/lib/contact-constants";
 import { sectionContainer } from "@/lib/section-layout";
+import { IsologoSv } from "@/components/icons/isologo-sv";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -178,11 +179,18 @@ export function Footer() {
             >
               <p className="sr-only">{t("footer.brand")}</p>
               <div
-                className="select-none font-serif font-bold leading-[0.82] tracking-[-0.04em] text-[color:var(--color-accent)]"
+                className="flex items-center gap-3 sm:gap-4 lg:gap-6"
+                style={{ fontSize: "clamp(2.85rem,11.5vw,8.5rem)" }}
                 aria-hidden
               >
-                <span className="block text-[clamp(2.85rem,11.5vw,8.5rem)]">{t("hero.titleLine1")}</span>
-                <span className="block text-[clamp(2.85rem,11.5vw,8.5rem)]">{t("hero.titleLine2")}</span>
+                <IsologoSv
+                  className="shrink-0 text-(--color-accent)"
+                  style={{ height: "1.4em", width: "1.4em" }}
+                />
+                <div className="select-none font-serif font-bold leading-[0.82] tracking-[-0.04em] text-(--color-accent)">
+                  <span className="block text-[1em]">{t("hero.titleLine1")}</span>
+                  <span className="block text-[1em]">{t("hero.titleLine2")}</span>
+                </div>
               </div>
             </motion.div>
 
