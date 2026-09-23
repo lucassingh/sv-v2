@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { DM_Serif_Display, Roboto_Condensed } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { I18nProvider } from '@/components/providers/i18n-provider'
+import { SiteLoader } from '@/components/site-loader'
 import './globals.css'
 
 /** Debe coincidir con `fontCssVarNames` en `theme/theme.ts` (Next/font exige literales aquí). */
@@ -24,16 +25,13 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
         url: '/icon.svg',
         type: 'image/svg+xml',
+      },
+      {
+        url: '/icon-32x32.png',
+        type: 'image/png',
+        sizes: '32x32',
       },
     ],
     apple: '/apple-icon.png',
@@ -48,7 +46,10 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${dmSerif.variable} ${robotoCondensed.variable}`}>
       <body className="font-sans antialiased bg-white">
-        <I18nProvider>{children}</I18nProvider>
+        <I18nProvider>
+          <SiteLoader />
+          {children}
+        </I18nProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

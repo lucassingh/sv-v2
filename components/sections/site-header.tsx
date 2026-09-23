@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { sectionIds, type NavSectionId } from "@/lib/section-ids";
 import type { NavBackdropKind } from "@/lib/nav-surface";
 import { LanguageToggle } from "@/components/language-toggle";
+import { IsologoSv } from "@/components/icons/isologo-sv";
 import { handleInPageNavClick } from "@/lib/scroll-to-section";
 
 const PRIMARY_RGB = "47, 63, 68";
@@ -95,21 +96,22 @@ export function SiteHeader({ activeSectionId, navBackdrop }: SiteHeaderProps) {
 
   return (
     <header
-      className={`fixed top-3 left-3 right-3 z-50 sm:top-4 sm:left-5 sm:right-5 rounded-lg shadow-(--shadow-lg)
+      className={`fixed top-3 left-1/2 z-(--z-header) w-[min(94vw,64rem)] -translate-x-1/2 sm:top-4 rounded-lg shadow-(--shadow-lg)
         transition-[transform,background-color,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]
         motion-reduce:transition-transform motion-reduce:duration-300${
         visible ? "" : " -translate-y-[calc(100%+2rem)]"
       }`}
       style={{ backgroundColor: headerBg }}
     >
-      <div className="flex items-center justify-between px-5 py-3.5 sm:px-6 lg:px-8 lg:py-4">
+      <div className="flex items-center justify-between px-5 py-3.5 sm:px-6 lg:px-7 lg:py-4">
         <a
           href={`#${sectionIds.inicio}`}
-          style={{ fontFamily: "var(--font-family-serif)", color: logoColor }}
-          className="shrink-0 text-sm sm:text-base lg:text-[1.05rem] leading-tight tracking-wide"
+          style={{ color: logoColor }}
+          className="flex shrink-0 items-center"
+          aria-label={t("footer.brand")}
           onClick={(e) => handleNavClick(e, sectionIds.inicio, () => setOpen(false))}
         >
-          Sembrando Valores
+          <IsologoSv className="h-8 w-8 sm:h-9 sm:w-9" aria-hidden />
         </a>
 
         <nav
